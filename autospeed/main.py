@@ -114,7 +114,7 @@ class AutoSpeed:
     def handle_home_rails_end(self, homing_state, rails):
         # Get axis min/max values
         # Get stepper microsteps
-        if not len(self.steppers.keys()) <= 2:
+        if not len(self.steppers.keys()) == 3:
             for rail in rails:
                 pos_min, pos_max = rail.get_range()
                 for stepper in rail.get_steppers():
