@@ -114,7 +114,7 @@ managed_services: klipper
 ```
 cd ~
 git clone https://github.com/NickTalavera/klipper_auto_speed_tweaks.git
-cd klipper_auto_speed
+cd klipper_auto_speed_tweaks
 ./install.sh
 ```
 
@@ -122,7 +122,7 @@ cd klipper_auto_speed
 1.  Clone the repository
     1. `cd ~`
     2. `git clone https://github.com/NickTalavera/klipper_auto_speed_tweaks.git`
-    3. `cd klipper_auto_speed`
+    3. `cd klipper_auto_speed_tweaks`
 2.  Link auto_speed to klipper
     1. `ln -sf ~/klipper_auto_speed/auto_speed.py ~/klipper/klippy/extras/auto_speed.py`
 3.  Install matplotlib
