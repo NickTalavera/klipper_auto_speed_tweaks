@@ -99,7 +99,7 @@ Using Ellis' pattern (AUTO_SPEED_VALIDATE) is **NOT** a safe movement pattern. P
 ```
 [update_manager klipper_auto_speed]
 type: git_repo
-path: ~/klipper_auto_speed
+path: ~/klipper_auto_speed_tweaks
 origin: https://github.com/NickTalavera/klipper_auto_speed_tweaks.git
 primary_branch: main
 install_script: install.sh
