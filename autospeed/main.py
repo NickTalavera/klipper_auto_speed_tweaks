@@ -114,7 +114,7 @@ class AutoSpeed:
     def handle_home_rails_end(self, homing_state, rails):
         # Get axis min/max values
         # Get stepper microsteps
-        if not len(self.steppers.keys()) == 3:
+        if not len(self.steppers.keys()) <= 2:
             for rail in rails:
                 pos_min, pos_max = rail.get_range()
                 for stepper in rail.get_steppers():
@@ -161,7 +161,7 @@ class AutoSpeed:
 
     cmd_AUTO_SPEED_help = ("Automatically find your printer's maximum acceleration/velocity")
     def cmd_AUTO_SPEED(self, gcmd):
-        if not len(self.steppers.keys()) == 3:
+        if not len(self.steppers.keys()) <= 2:
             raise gcmd.error(f"Printer must be homed first! Found {len(self.steppers.keys())} homed axes.")
 
         validate = gcmd.get_int('VALIDATE', 0, minval=0, maxval=1)
@@ -199,7 +199,7 @@ class AutoSpeed:
 
     cmd_AUTO_SPEED_ACCEL_help = ("Automatically find your printer's maximum acceleration")
     def cmd_AUTO_SPEED_ACCEL(self, gcmd):
-        if not len(self.steppers.keys()) == 3:
+        if not len(self.steppers.keys()) <= 2:
             raise gcmd.error(f"Printer must be homed first! Found {len(self.steppers.keys())} homed axes.")
         axes = self._parse_axis(gcmd.get("AXIS", self._axis_to_str(self.axes)))
 
@@ -255,7 +255,7 @@ class AutoSpeed:
 
     cmd_AUTO_SPEED_VELOCITY_help = ("Automatically find your printer's maximum velocity")
     def cmd_AUTO_SPEED_VELOCITY(self, gcmd):
-        if not len(self.steppers.keys()) == 3:
+        if not len(self.steppers.keys()) <= 2:
             raise gcmd.error(f"Printer must be homed first! Found {len(self.steppers.keys())} homed axes.")
         axes = self._parse_axis(gcmd.get("AXIS", self._axis_to_str(self.axes)))
 
@@ -311,7 +311,7 @@ class AutoSpeed:
 
     cmd_AUTO_SPEED_VALIDATE_help = ("Validate your printer's acceleration/velocity don't miss steps")
     def cmd_AUTO_SPEED_VALIDATE(self, gcmd):
-        if not len(self.steppers.keys()) == 3:
+        if not len(self.steppers.keys()) <= 2:
             raise gcmd.error(f"Printer must be homed first! Found {len(self.steppers.keys())} homed axes.")
 
         max_missed   = gcmd.get_float('MAX_MISSED', self.max_missed, above=0.0)
@@ -340,7 +340,7 @@ class AutoSpeed:
     cmd_AUTO_SPEED_GRAPH_help = ("Graph your printer's maximum acceleration at given velocities")
     def cmd_AUTO_SPEED_GRAPH(self, gcmd):
         import matplotlib.pyplot as plt # this may fail if matplotlib isn't installed
-        if not len(self.steppers.keys()) == 3:
+        if not len(self.steppers.keys()) <= 2:
             raise gcmd.error(f"Printer must be homed first! Found {len(self.steppers.keys())} homed axes.")
         axes = self._parse_axis(gcmd.get("AXIS", self._axis_to_str(self.axes)))
 
@@ -413,7 +413,7 @@ class AutoSpeed:
     #
     # -------------------------------------------------------
     def _prepare(self, gcmd):
-        if not len(self.steppers.keys()) == 3:
+        if not len(self.steppers.keys()) <= 2:
             raise gcmd.error(f"Printer must be homed first! Found {len(self.steppers.keys())} homed axes.")
 
         start = perf_counter()
@@ -787,7 +787,7 @@ class AutoSpeed:
 
     def cmd_X_ENDSTOP_ACCURACY(self, gcmd):
 
-        if not len(self.steppers.keys()) == 3:
+        if not len(self.steppers.keys()) <= 2:
             raise gcmd.error(f"Printer must be homed first! Found {len(self.steppers.keys())} homed axes.")
 
         # Number of samples for accuracy check
@@ -840,7 +840,7 @@ class AutoSpeed:
 
     def cmd_Y_ENDSTOP_ACCURACY(self, gcmd):
 
-        if not len(self.steppers.keys()) == 3:
+        if not len(self.steppers.keys()) <= 2:
             raise gcmd.error(f"Printer must be homed first! Found {len(self.steppers.keys())} homed axes.")
 
         # Number of samples for accuracy check
@@ -892,7 +892,7 @@ class AutoSpeed:
 
     def cmd_Z_ENDSTOP_ACCURACY(self, gcmd):
 
-        if not len(self.steppers.keys()) == 3:
+        if not len(self.steppers.keys()) <= 2:
             raise gcmd.error(f"Printer must be homed first! Found {len(self.steppers.keys())} homed axes.")
 
         # Number of samples for accuracy check
