@@ -21,21 +21,21 @@ Your printer shouldn't have any crashes due to the movement patterns used, and r
 Using Ellis' pattern (AUTO_SPEED_VALIDATE) is **NOT** a safe movement pattern. Please ensure your toolhead isn't crashing before walking away.
 
 # Table of Contents
- - [Overview](https://github.com/NickTalavera/klipper_auto_speed#overview)
- - [Example Usage](https://github.com/NickTalavera/klipper_auto_speed#example-usage)
- - [Roadmap](https://github.com/NickTalavera/klipper_auto_speed#roadmap)
- - [How does it work](https://github.com/NickTalavera/klipper_auto_speed#how-does-it-work)
- - [Using Klipper Auto Speed](https://github.com/NickTalavera/klipper_auto_speed#using-klipper-auto-speed)
-   - [Installation](https://github.com/NickTalavera/klipper_auto_speed#installation)
-     - [Moonraker Update Manager](https://github.com/NickTalavera/klipper_auto_speed#moonraker-update-manager)
-   - [Configuration](https://github.com/NickTalavera/klipper_auto_speed#configuration)
-   - [Macros](https://github.com/NickTalavera/klipper_auto_speed#macro)
-     - [AUTO_SPEED](https://github.com/NickTalavera/klipper_auto_speed#auto_speed)
-     - [AUTO_SPEED_ACCEL](https://github.com/NickTalavera/klipper_auto_speed#auto_speed_accel)
-     - [AUTO_SPEED_VELOCITY](https://github.com/NickTalavera/klipper_auto_speed#auto_speed_velocity)
-     - [AUTO_SPEED_VALIDATE](https://github.com/NickTalavera/klipper_auto_speed#auto_speed_validate)
-     - [AUTO_SPEED_GRAPH](https://github.com/NickTalavera/klipper_auto_speed#auto_speed_graph)
- - [Console Output](https://github.com/NickTalavera/klipper_auto_speed#console-output)
+ - [Overview](https://github.com/NickTalavera/klipper_auto_speed_tweaks#overview)
+ - [Example Usage](https://github.com/NickTalavera/klipper_auto_speed_tweaks#example-usage)
+ - [Roadmap](https://github.com/NickTalavera/klipper_auto_speed_tweaks#roadmap)
+ - [How does it work](https://github.com/NickTalavera/klipper_auto_speed_tweaks#how-does-it-work)
+ - [Using Klipper Auto Speed](https://github.com/NickTalavera/klipper_auto_speed_tweaks#using-klipper-auto-speed)
+   - [Installation](https://github.com/NickTalavera/klipper_auto_speed_tweaks#installation)
+     - [Moonraker Update Manager](https://github.com/NickTalavera/klipper_auto_speed_tweaks#moonraker-update-manager)
+   - [Configuration](https://github.com/NickTalavera/klipper_auto_speed_tweaks#configuration)
+   - [Macros](https://github.com/NickTalavera/klipper_auto_speed_tweaks#macro)
+     - [AUTO_SPEED](https://github.com/NickTalavera/klipper_auto_speed_tweaks#auto_speed)
+     - [AUTO_SPEED_ACCEL](https://github.com/NickTalavera/klipper_auto_speed_tweaks#auto_speed_accel)
+     - [AUTO_SPEED_VELOCITY](https://github.com/NickTalavera/klipper_auto_speed_tweaks#auto_speed_velocity)
+     - [AUTO_SPEED_VALIDATE](https://github.com/NickTalavera/klipper_auto_speed_tweaks#auto_speed_validate)
+     - [AUTO_SPEED_GRAPH](https://github.com/NickTalavera/klipper_auto_speed_tweaks#auto_speed_graph)
+ - [Console Output](https://github.com/NickTalavera/klipper_auto_speed_tweaks#console-output)
 
 ## Overview
  - License: MIT
@@ -100,7 +100,7 @@ Using Ellis' pattern (AUTO_SPEED_VALIDATE) is **NOT** a safe movement pattern. P
 [update_manager klipper_auto_speed]
 type: git_repo
 path: ~/klipper_auto_speed
-origin: https://github.com/NickTalavera/klipper_auto_speed.git
+origin: https://github.com/NickTalavera/klipper_auto_speed_tweaks.git
 primary_branch: main
 install_script: install.sh
 managed_services: klipper
@@ -108,12 +108,12 @@ managed_services: klipper
 
 ### Installation
  To install this module you need to clone the repository and run the `install.sh` script.
- **Depending on when you installed klipper, you may also need to [update your klippy-env python version.](https://github.com/NickTalavera/klipper_auto_speed#update-klippy-env)**
+ **Depending on when you installed klipper, you may also need to [update your klippy-env python version.](https://github.com/NickTalavera/klipper_auto_speed_tweaks#update-klippy-env)**
 
 #### Automatic installation
 ```
 cd ~
-git clone https://github.com/NickTalavera/klipper_auto_speed.git
+git clone https://github.com/NickTalavera/klipper_auto_speed_tweaks.git
 cd klipper_auto_speed
 ./install.sh
 ```
@@ -121,7 +121,7 @@ cd klipper_auto_speed
 #### Manual installation
 1.  Clone the repository
     1. `cd ~`
-    2. `git clone https://github.com/NickTalavera/klipper_auto_speed.git`
+    2. `git clone https://github.com/NickTalavera/klipper_auto_speed_tweaks.git`
     3. `cd klipper_auto_speed`
 2.  Link auto_speed to klipper
     1. `ln -sf ~/klipper_auto_speed/auto_speed.py ~/klipper/klippy/extras/auto_speed.py`
